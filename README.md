@@ -26,4 +26,3 @@ pip install xian-py
 ## TODO
 - [] Deploy multiple contracts at once
 - [] Wrap node endpoints for easy use
-# node-testing-env
