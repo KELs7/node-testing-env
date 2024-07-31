@@ -1,3 +1,5 @@
+import time
+
 from xian_py.xian import Xian
 from xian_py.wallet import Wallet
 
