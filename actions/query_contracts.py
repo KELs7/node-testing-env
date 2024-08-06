@@ -10,7 +10,7 @@ def query_contracts(network="local", raw=False) -> str | list:
         network_url = TESTNET
     elif network == "mainnet":
         network_url = MAINNET
-    query_result = subprocess.check_output(["curl", f'{network_url}/abci_query?path="/contracts"'], text=True)
+    query_result = subprocess.check_output(["curl", f'{network_url}/abci_query?path=%22/contracts%22'], text=True)
     if raw:
         print(query_result)
     else:
