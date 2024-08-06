@@ -1,4 +1,5 @@
 import os
+import time
 
 from xian_py.xian import Xian
 from xian_py.wallet import Wallet
@@ -30,3 +31,33 @@ def deploy(contract_name, network="local"):
         print(f'success: {submit["success"]}')
         print(f'tx_hash: {submit["tx_hash"]}')
         print(f'message: {submit["message"]}')
+
+def deploy_contracts(folder, network="local"):
+    xian = Xian(
+        LOCAL,
+        wallet=Wallet(PRIV_KEY)
+    )
+    if network == "testnet": 
+        xian =  Xian(
+            TESTNET,
+            wallet=Wallet(PRIV_KEY)
+        )
+    elif network == "mainnet":
+        xian =  Xian(
+            MAINNET,
+            wallet=Wallet(PRIV_KEY)
+        )
+
+    for root, dirs, files in os.walk(f'{contracts_folder}/{folder}'):
+        for file in files:
+            contract_name = file[:-3]
+
+            with open(f'{contracts_folder}/{folder}/{contract_name}.py') as f:
+                code = f.read()    
+                submit = xian.submit_contract(contract_name, code)
+
+                print(f'success: {submit["success"]}')
+                print(f'tx_hash: {submit["tx_hash"]}')
+                print(f'message: {submit["message"]}')
+
+            time.sleep(3)

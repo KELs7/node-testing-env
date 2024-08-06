@@ -24,5 +24,5 @@ pip install xian-py
 - [x] Deploy contract to network(local node, testnet, mainnet)
 
 ## TODO
-- [] Deploy multiple contracts at once
+- [x] Deploy multiple contracts at once
 - [] Wrap node endpoints for easy use
