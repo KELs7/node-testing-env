@@ -7,6 +7,13 @@ An easy way to run testing scripts for xian nodes
 - [x] Approve XSC001 contract to spend tokens
 - [x] Deploy contract to network(local node, testnet, mainnet)
 
+## Requirement
+* Install Python 3.11.8
+* Install xian-py
+```
+pip install xian-py
+```
+
 ## Usage
 Clone this repo and start writing your scripts in `main.py`
 ```
@@ -16,12 +23,6 @@ Run with `python3 main.py` or `python main.py`
 
 Change default values in `config.py` as you need
 
-## Requirement
-* Install Python 3.11.8
-* Install xian-py
-```
-pip install xian-py
-```
 ## TODO
 - [x] Deploy multiple contracts at once
 - [] Wrap node endpoints for easy use
