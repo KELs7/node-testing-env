@@ -23,6 +23,9 @@ Run with `python3 main.py` or `python main.py`
 
 Change default values in `config.py` as you need
 
+### Contract deployment
+To submit a single contract, put the contract file in the `contracts` folder and make sure the name of your contract file is passed to the deploy function `ie deploy(contract_file_name)`. To submit a number of contracts, create a folder within the `contracts` folder and pass the folder name to the deploy contracts function `ie deploy_contracts(folder)`
+
 ## TODO
 - [x] Deploy multiple contracts at once
 - [] Wrap node endpoints for easy use
