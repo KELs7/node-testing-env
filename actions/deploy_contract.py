@@ -5,6 +5,8 @@ from xian_py.wallet import Wallet
 
 from config import PRIV_KEY, LOCAL, TESTNET, MAINNET
 
+contracts_folder = "contracts"
+
 def deploy(contract_name, network="local"):
     xian = Xian(
         LOCAL,
@@ -21,7 +23,7 @@ def deploy(contract_name, network="local"):
             wallet=Wallet(PRIV_KEY)
         )
 
-    with open(f'contracts/{contract_name}.py') as f: # ensure the contract name is the same as the file name
+    with open(f'{contracts_folder}/{contract_name}.py') as f: # ensure the contract name is the same as the file name
         code = f.read()    
         submit = xian.submit_contract(contract_name, code)
 
