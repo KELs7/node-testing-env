@@ -4,7 +4,7 @@ import time
 from xian_py.xian import Xian
 from xian_py.wallet import Wallet
 
-from config import PRIV_KEY, LOCAL, TESTNET, MAINNET
+from config import PRIV_KEY, LOCAL, TESTNET, MAINNET, TESTNET_CHAIN_ID, MAINNET_CHAIN_ID
 
 contracts_folder = "contracts"
 
@@ -16,11 +16,13 @@ def deploy(contract_name, network="local"):
     if network == "testnet": 
         xian =  Xian(
             TESTNET,
+            chain_id=TESTNET_CHAIN_ID,
             wallet=Wallet(PRIV_KEY)
         )
     elif network == "mainnet":
         xian =  Xian(
             MAINNET,
+            chain_id=MAINNET_CHAIN_ID,
             wallet=Wallet(PRIV_KEY)
         )
 
@@ -40,11 +42,13 @@ def deploy_contracts(folder, network="local"):
     if network == "testnet": 
         xian =  Xian(
             TESTNET,
+            chain_id=TESTNET_CHAIN_ID,
             wallet=Wallet(PRIV_KEY)
         )
     elif network == "mainnet":
         xian =  Xian(
             MAINNET,
+            chain_id=MAINNET_CHAIN_ID,
             wallet=Wallet(PRIV_KEY)
         )
 

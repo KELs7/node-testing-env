@@ -1,3 +1,5 @@
+MAINNET_CHAIN_ID=""
+TESTNET_CHAIN_ID="xian-testnet-5"
 MAINNET=""
 TESTNET="https://testnet.xian.org"
 LOCAL="http://127.0.0.1:26657"
