@@ -9,10 +9,8 @@ from config import PRIV_KEY, LOCAL, TESTNET, MAINNET, TESTNET_CHAIN_ID, MAINNET_
 contracts_folder = "contracts"
 
 def deploy(contract_name, network="local"):
-    xian = Xian(
-        LOCAL,
-        wallet=Wallet(PRIV_KEY)
-    )
+    xian = None
+    
     if network == "testnet": 
         xian =  Xian(
             TESTNET,
@@ -23,6 +21,11 @@ def deploy(contract_name, network="local"):
         xian =  Xian(
             MAINNET,
             chain_id=MAINNET_CHAIN_ID,
+            wallet=Wallet(PRIV_KEY)
+        )
+    else:
+        xian = Xian(
+            LOCAL,
             wallet=Wallet(PRIV_KEY)
         )
 
@@ -35,10 +38,8 @@ def deploy(contract_name, network="local"):
         print(f'message: {submit["message"]}')
 
 def deploy_contracts(folder, network="local"):
-    xian = Xian(
-        LOCAL,
-        wallet=Wallet(PRIV_KEY)
-    )
+    xian = None
+
     if network == "testnet": 
         xian =  Xian(
             TESTNET,
@@ -49,6 +50,11 @@ def deploy_contracts(folder, network="local"):
         xian =  Xian(
             MAINNET,
             chain_id=MAINNET_CHAIN_ID,
+            wallet=Wallet(PRIV_KEY)
+        )
+    else:
+        xian = Xian(
+            LOCAL,
             wallet=Wallet(PRIV_KEY)
         )
 
