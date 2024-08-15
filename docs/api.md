@@ -35,6 +35,7 @@ parameters:
         folder: string 
     defaults:
         network="local"     #other options: "testnet" | "mainnet"
+        
 returns:
     string
 ```
@@ -49,6 +50,7 @@ parameters:
         kwargs: dictionary
     defaults:
         network="local"     #other options: "testnet" | "mainnet"
+
 returns:
     string
 ```
