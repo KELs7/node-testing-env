@@ -5,7 +5,7 @@ import subprocess
 from config import LOCAL, TESTNET, MAINNET
 
 
-def query_state(contract, storage_name, limit=0, offset=0,network="local", raw=False) -> str | list:
+def query_state(contract, storage_name, limit=1, offset=0,network="local", raw=False) -> str | list:
     network_url = LOCAL
     if network == "testnet":
         network_url = TESTNET
