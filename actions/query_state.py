@@ -5,7 +5,7 @@ import subprocess
 from config import LOCAL, TESTNET, MAINNET
 
 
-def query_state(contract, storage_name, network="local", raw=False) -> str | list:
+def query_state(contract, storage_name, limit=0, offset=0,network="local", raw=False) -> str | list:
     network_url = LOCAL
     if network == "testnet":
         network_url = TESTNET
@@ -14,7 +14,7 @@ def query_state(contract, storage_name, network="local", raw=False) -> str | lis
     query_result = subprocess.check_output(
         [
             "curl",
-            f"{network_url}/abci_query?path=%22/state/{contract}.{storage_name}%22",
+            f"{network_url}/abci_query?path=%22/state/{contract}.{storage_name}/limit={limit}/offset={offset}%22",
         ],
         text=True,
     )
