@@ -17,7 +17,7 @@ returns:
 ## deploy
 deploy a single contract
 
-to submit a single contract, put the contract file in the `contracts` folder. Use the file name as the name of your contract.
+to submit a single contract, put the contract file in the `contracts` folder. use the file name as the name of your contract.
 ```txt
 |-contracts
     |-con_my_token.py
