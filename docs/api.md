@@ -16,6 +16,12 @@ returns:
 
 ## deploy
 deploy a single contract
+
+to submit a single contract, put the contract file in the `contracts` folder. Use the file name as the name of your contract.
+```txt
+|-contracts
+    |-con_my_token.py
+```
 ```
 parameters:
     inputs:
@@ -29,13 +35,22 @@ returns:
 
 ## deploy_contracts
 deploy multiple contracts once
+
+to submit a number of contracts, create a folder within the `contracts` folder. use folder name to deploy all the contracts in the folde
+```txt
+|-contracts
+    |-con_my_token.py
+    |-cool_contracts
+        |-con_cool_master.py
+        |-con_cool_info.py
+```
 ```
 parameters:
     inputs:
         folder: string 
     defaults:
         network="local"     #other options: "testnet" | "mainnet"
-        
+
 returns:
     string
 ```
