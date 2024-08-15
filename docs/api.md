@@ -50,7 +50,6 @@ parameters:
     defaults:
         network="local"     #other options: "testnet" | "mainnet"
 returns:
-
     string
 ```
 
@@ -75,7 +74,7 @@ fetch deployed contracts on Xian
 parameters:
     defaults:
         network = "local"       #other options: "testnet" | "mainnet"
-        raw = False     #when true, returns decoded value
+        raw = False     #returns decoded value
 
 returns:
     list | string
@@ -91,7 +90,7 @@ parameters:
         limit = 1       #returns one item
         offset = 0      #start from a certain point from last known state
         network = "local"       #other options: "testnet" | "mainnet"
-        raw = False     #when true, returns decoded value
+        raw = False     #returns decoded value
 
 returns:
     list | string
